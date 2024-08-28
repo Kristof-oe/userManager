@@ -1,1 +1,57 @@
-<p>list-comments works!</p>
+<h1 class="mb-5">List Comments</h1>
+
+<div
+ class="mb-5"
+ >
+    <button 
+    (click)="orderByLikeNumber()"
+    type="button"
+     class="btn btn-primary"
+     >
+     Order by like numbers</button>
+</div>
+
+
+<div class="card mb-5" *ngFor="let item of comments">
+    <h5 class="card-header">
+        <div>
+            <span class="btn btn-secondary">
+                {{item.likedCounter}}
+            </span>
+            -number of Likes
+        </div>
+    <br>
+        <div>
+            <span class="btn btn-secondary">
+                {{item.id}}
+            </span>
+            -Comment ID
+        </div>
+    <br>
+        <div>
+            <span class="btn btn-secondary">
+                {{item.user.id}}
+            </span>
+            -User ID
+        </div>
+      
+      
+    </h5>
+    <div class="card-body">
+      <h5 class="card-title">
+        <img [src]="item.user.image" class="user-image" >
+        u/{{item.user.username}}
+    </h5>
+      <p class="card-text">
+        {{item.body}}
+      </p>
+      <button class="btn btn-sm btn-success mr-2" 
+      (click)="likeComment(item)">
+                Like
+      </button>
+      <button class="btn btn-sm btn-warning mr-2" 
+      (click)="disLikeComment(item)">
+        Dislike
+    </button>
+    </div>
+  </div>
