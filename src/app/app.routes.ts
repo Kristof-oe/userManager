@@ -5,6 +5,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ListUsersComponent } from './list-users/list-users.component';
 import { ListCommentsComponent } from './list-comments/list-comments.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { SearchUserComponent } from './search-user/search-user.component';
 
 
 export const routes: Routes = [
@@ -14,5 +15,6 @@ export const routes: Routes = [
     {path:'users', component: ListUsersComponent},
     {path:'comments', component: ListCommentsComponent},
     {path:'edituser/:id', component: EditUserComponent},
+    {path:'search/:username', component: SearchUserComponent},
     {path:'**', redirectTo: 'wel', pathMatch:'full'},
 ];
